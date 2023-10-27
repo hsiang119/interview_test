@@ -60,21 +60,24 @@
 </script>
 
 <template>
-  <!-- <main class="flex flex-col sm:grid sm:grid-rows-3 sm:grid-flow-col w-full h-[100vh] "> -->
-  <main class="grid grid-rows-3 grid-flow-col w-full h-[100vh] ">
+  <main class="flex flex-col main sm:!grid w-[100vw] h-[100vh] sm:!grid-rows-3">
     <GlobalHeader 
+      class="col-span-1 row-span-3"
       :active-tab="activeTab"
       @handle-active="handleActive" 
       :title="sideBarTitle" 
       :menu-item="menuItem" 
-      class="col-span-1 row-span-3"
       @handle-burger-menu="handleBurgerMenu"
       :burger-active="burgerActive"
     />
-    <HomeBanner :title="bannerTitle" :subtitle="bannerSubtitle" class="col-span-2 row-span-2"/>
-    <HomeParagraphs :info-item="infoItem" class="col-span-2"/>
-  </main>
+    <HomeBanner :title="bannerTitle" :subtitle="bannerSubtitle" class="col-start-2 col-end-4 row-span-2"/>
+    <HomeParagraphs :info-item="infoItem" class="col-start-2 col-end-4 row-span-1"/>
+</main>
+
 </template>
 
 <style scoped>
+  .main {
+    grid-template-columns: 345px 1fr 1fr;
+  }
 </style>
